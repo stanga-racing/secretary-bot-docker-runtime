@@ -9,11 +9,8 @@ jobs:
   checkout_code:
     working_directory: ~/secretary_bot_runtime
     docker:
-      - image: alpine:latest
+      - image: buildpack-deps:latest
     steps:
-      - run:
-          name: Install CA Certificates
-          command: apk add --no-cache ca-certificates
       - checkout
       - save_cache:
           name: Saving Git Repository To Cache
